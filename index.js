@@ -118,8 +118,8 @@ function memberHtml(member) {
             <h5 class="card-header">${name}<br /><br />Engineer</h5>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">ID: ${id}</li>
-                <li class="list-group-item">Email Address: ${email}</li>
-                <li class="list-group-item">GitHub: ${gitHub}</li>
+                <li class="list-group-item"><a href="mailto:${email}">Email: ${email}</a></li>
+                <li class="list-group-item"><a target="_blank" rel="noopener noreferrer" href="${gitHub}">View my GitHub</a></li>
             </ul>
             </div>
         </div>`;
@@ -130,7 +130,7 @@ function memberHtml(member) {
             <h5 class="card-header">${name}<br /><br />Intern</h5>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">ID: ${id}</li>
-                <li class="list-group-item">Email Address: ${email}</li>
+                <li class="list-group-item"><a href="mailto:${email}">Email: ${email}</a></li>
                 <li class="list-group-item">School: ${school}</li>
             </ul>
             </div>
@@ -142,7 +142,7 @@ function memberHtml(member) {
             <h5 class="card-header">${name}<br /><br />Manager</h5>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">ID: ${id}</li>
-                <li class="list-group-item">Email Address: ${email}</li>
+                <li class="list-group-item"><a href="mailto:${email}">Email: ${email}</a></li>
                 <li class="list-group-item">Office Phone: ${officePhone}</li>
             </ul>
             </div>

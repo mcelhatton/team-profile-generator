@@ -71,7 +71,7 @@ THEN I exit the application, and the HTML is generated
 ![alt='Screenshot of Landing Page'](./assets/screenshot.png)
 
 ## LINK TO VIDEO DEMO:<a name="video"></a>
-[VIDEO DEMO - Click here!]( https://github.com/mcelhatton/team-profile-generator)
+[VIDEO DEMO - Click here!](https://drive.google.com/file/d/1MDmiI0Mv6ir5ZhBBIMc6Zy4-m0RiHTmG/view?usp=sharing)
    
 ## CREDITS:<a name="credits"></a>
 * This application used parts of other example apps found on github from past students.  My tutor also helped get the test correct.
