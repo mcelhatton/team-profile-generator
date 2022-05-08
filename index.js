@@ -7,7 +7,7 @@ const Intern = require("./lib/Intern");
 const teamMember = [];
 
 function initApp() {
-    startHtml();
+    baseHtml();
     addMember();
 }
 
@@ -66,7 +66,7 @@ function addMember() {
                 newMember = new Manager(name, id, email, roleInfo);
             }
             teamMember.push(newMember);
-            addHtml(newMember)
+            memberHtml(newMember)
             .then(function() {
                 if (moreMembers === "yes") {
                     addMember();
@@ -79,7 +79,7 @@ function addMember() {
     });
 }
 
-function startHtml() {
+function baseHtml() {
     const html = `<!DOCTYPE html>
     <html lang="en">
     <head>
@@ -87,6 +87,7 @@ function startHtml() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="./src/style.css">
         <title>Team Profile</title>
     </head>
     <body>
@@ -94,7 +95,7 @@ function startHtml() {
             <span class="navbar-brand mb-0 h1 w-100 text-center">Team Profile</span>
         </nav>
         <div class="container">
-            <div class="row">`;
+            <div class="row justify-content-center" id="team-cards">`;
     fs.writeFile("./dist/about.html", html, function(err) {
         if (err) {
             console.log(err);
@@ -103,7 +104,7 @@ function startHtml() {
     console.log("start");
 }
 
-function addHtml(member) {
+function memberHtml(member) {
     return new Promise(function(resolve, reject) {
         const name = member.getName();
         const role = member.getRole();
@@ -112,7 +113,7 @@ function addHtml(member) {
         let data = "";
         if (role === "Engineer") {
             const gitHub = member.getGithub();
-            data = `<div class="col-6">
+            data = `<div class="col-3">
             <div class="card mx-auto mb-3" style="width: 18rem">
             <h5 class="card-header">${name}<br /><br />Engineer</h5>
             <ul class="list-group list-group-flush">
@@ -124,7 +125,7 @@ function addHtml(member) {
         </div>`;
         } else if (role === "Intern") {
             const school = member.getSchool();
-            data = `<div class="col-6">
+            data = `<div class="col-3">
             <div class="card mx-auto mb-3" style="width: 18rem">
             <h5 class="card-header">${name}<br /><br />Intern</h5>
             <ul class="list-group list-group-flush">
@@ -136,7 +137,7 @@ function addHtml(member) {
         </div>`;
         } else {
             const officePhone = member.getOfficeNumber();
-            data = `<div class="col-6">
+            data = `<div class="col-3">
             <div class="card mx-auto mb-3" style="width: 18rem">
             <h5 class="card-header">${name}<br /><br />Manager</h5>
             <ul class="list-group list-group-flush">
@@ -156,11 +157,6 @@ function addHtml(member) {
         });
     });
     
-            
-    
-        
-    
-    
 }
 
 function finishHtml() {
@@ -170,7 +166,7 @@ function finishHtml() {
 </body>
 </html>`;
 
-    fs.appendFile("./dist/about", html, function (err) {
+    fs.appendFile("./dist/about.html", html, function (err) {
         if (err) {
             console.log(err);
         };
