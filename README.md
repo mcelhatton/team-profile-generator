@@ -77,5 +77,5 @@ THEN I exit the application, and the HTML is generated
 * This application used parts of other example apps found on github from past students.  My tutor also helped get the test correct.
 
 ## LINK TO GITHUB REPO:<a name="repo"></a>
-[README GENERATOR REPO - Click here!]( https://github.com/mcelhatton/team-profile-generator)
+[TEAM ABOUT GENERATOR REPO - Click here!]( https://github.com/mcelhatton/team-profile-generator)
   
